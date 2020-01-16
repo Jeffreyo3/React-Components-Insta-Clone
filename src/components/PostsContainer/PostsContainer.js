@@ -5,9 +5,15 @@ import "./Posts.css";
 
 // pass props and map through the dummy data to display your posts
 const PostsContainer = props => {
+  // console.log(props)
   return (
     <div className="posts-container-wrapper">
-      {/* map through data here */}
+      {/* map through data here */
+      props.postData.map(post => {
+        return(
+          <Post key={post.timestamp} post={post} />
+        )
+      })}
     </div>
   );
 };
